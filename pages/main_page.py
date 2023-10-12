@@ -5,9 +5,15 @@ from selenium.webdriver.common.by import By
 
 
 class MainPage(BasePage):
+    
+    def __init__(self, *args, **kwards):
+        super(MainPage, self).__init__(*args, **kwards)
+    
     def go_to_login_page(self):
         login_link = self.browser.find_element(*MainPageLocators.LOGIN_LINK)
         login_link.click()
+        alert = self.browser.switch_to.alert
+        alert.accept()
         # return LoginPage(browser=self.browser, url=self.browser.current_url)
     
     def should_be_login_link(self):
