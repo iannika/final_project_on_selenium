@@ -8,4 +8,4 @@ class BasketPage(BasePage):
         
     def should_be_presented_message_about_empty_basket(self):
         self.is_element_present(*BasketPageLocators.BASKET_EMPTY)
-    
+        
